@@ -399,24 +399,6 @@ int main() {
         int32_t nmea = parse_NMEA_char(c, &string[0]);
     }
     GPS_calc_longitude_scaling(msg.nmea.lat);
-/*
-            int32_t lat    = msg.nmea.lat;
-            int32_t lon    = msg.nmea.lon;
-            float latf;
-            float lonf;
-//            gps_norm(latf, msg.nmea.lat);
-//            gps_norm(lonf, msg.nmea.lon);
-            latf     = ((float)msg.nmea.lat)/GPS_MUL;
-            lonf     = ((float)msg.nmea.lon)/GPS_MUL;
-            int16_t alt    = msg.nmea.alt * 10;
-            uint16_t hdop  = msg.nmea.hdop * 10;
-            int16_t course = msg.nmea.course;
-            uint16_t speed = msg.nmea.speed;
-            uint8_t fix    = msg.nmea.fix;
-            uint8_t sats   = msg.nmea.sats;
-            int32_t time   = msg.nmea.time;
-            uint32_t date  = msg.nmea.date;
-*/
 
             lat    = msg.nmea.lat;
             lon    = msg.nmea.lon;

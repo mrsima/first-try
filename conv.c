@@ -11,7 +11,6 @@
 #include <inttypes.h>
 //#include <compat.h>
 
-
 //#define DEBUG
 #define NMEA_BUF_LENGTH 0x48
 #define GPS_FILTER_VECTOR_LENGTH 5
@@ -299,8 +298,8 @@ $GPRMC,161229.487,A,3723.2475,N,12158.3416,W,0.13,309.62,120598, ,*10
 
         case '\r':
         case '\n':
-        case '#':
-//        if (c == 'C' || c == '\n') {
+        case '#':   // for testing from term
+
 #ifdef DEBUG
   printf("----- CR/LF ---- Parity=%d 0x%X\n",parity, parity);
 #endif
@@ -322,9 +321,6 @@ $GPRMC,161229.487,A,3723.2475,N,12158.3416,W,0.13,309.62,120598, ,*10
                 }
             }  //parity checksum
             checksum_param = 0;
-//            else { checksum_param = 0;
-//            }  //parity checksum
-//        }
         break;
 
         default:

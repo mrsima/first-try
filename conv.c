@@ -352,7 +352,7 @@ $GPRMC,161229.487,A,3723.2475,N,12158.3416,W,0.13,309.62,120598, ,*10
 
 
 float GPS_calc_longitude_scaling(int32_t lat) {
-  float rads       = (abs((float)lat) / 10000000.0) * 0.0174532925;
+  float rads       = (abs((float)lat) / GPS_MUL) * 0.0174532925;
   GPS_scaleLonDown = cos(rads);
 }
 
@@ -362,7 +362,6 @@ void NOINLINE gps_norm(float dst, long f) {
 #ifdef DEBUG
   printf("GPS_N &dst=%d dst=%d *dst F=%d\n",&dst,dst,*dst,f);
 #endif
-//    dst = f / GPS_MUL;
     dst = f / GPS_MUL;
 #ifdef DEBUG
   printf("DST=%f\n",dst);
